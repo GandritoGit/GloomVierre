@@ -19,6 +19,7 @@ textures = [[ExtResource("6_2331j"), ExtResource("7_u2coa")], [ExtResource("8_yv
 size = Vector3(1, 2, 1)
 
 [sub_resource type="Environment" id="Environment_o1qvh"]
+background_mode = 2
 
 [node name="Campsite" type="Node3D"]
 

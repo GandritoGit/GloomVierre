@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxi7syafn5mud"]
+[gd_scene load_steps=10 format=3 uid="uid://cxi7syafn5mud"]
 
 [ext_resource type="PackedScene" uid="uid://d38owdopel7p6" path="res://Scenes/player.tscn" id="1_4t3lw"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_hhu6f"]
@@ -6,23 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_7go3w"]
 [ext_resource type="PackedScene" uid="uid://ivo4lihvxxik" path="res://Scenes/MenuTest.tscn" id="4_ivgk7"]
 [ext_resource type="PackedScene" uid="uid://dbueonhnqch5c" path="res://Scenes/PauseMenu.tscn" id="6_8o48h"]
-[ext_resource type="Texture2D" uid="uid://dg3oivbwveshk" path="res://sky/EveningSkyHDRI018B_2K-HDR.exr" id="7_jkue0"]
+[ext_resource type="PackedScene" uid="uid://y3m6wpon71l0" path="res://sky/inside_galaxy_skybox_hdri_360_panorama.glb" id="7_hg1pd"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b0g6d"]
 size = Vector2(10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b0grl"]
 size = Vector3(10, 0.5, 10)
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_njkac"]
-panorama = ExtResource("7_jkue0")
-
-[sub_resource type="Sky" id="Sky_s4yk8"]
-sky_material = SubResource("PanoramaSkyMaterial_njkac")
-
-[sub_resource type="Environment" id="Environment_c736r"]
-background_mode = 2
-sky = SubResource("Sky_s4yk8")
 
 [node name="Main Menu" type="Node3D"]
 script = ExtResource("1_hhu6f")
@@ -39,7 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.244093, 0)
 shape = SubResource("BoxShape3D_b0grl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.634137, 0.773221, 0, -0.773221, -0.634137, 0, 10.1205, -6.56415)
+transform = Transform3D(1, 0, 0, 0, 0.0690427, 0.997614, 0, -0.997614, 0.0690427, 0, 8.018, 0)
 
 [node name="StartXR" parent="." instance=ExtResource("3_7enum")]
 
@@ -53,5 +43,5 @@ transform = Transform3D(0.0128802, 0, -0.999917, 0, 1, 0, 0.999917, 0, 0.0128802
 scene = ExtResource("6_8o48h")
 transparent = 0
 
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_c736r")
+[node name="inside_galaxy_skybox_hdri_360_panorama" parent="." instance=ExtResource("7_hg1pd")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
