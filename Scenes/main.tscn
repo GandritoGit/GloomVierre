@@ -49,8 +49,10 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." instance=ExtResource("1_4t3lw")]
 
 [node name="Menu" parent="." instance=ExtResource("3_7go3w")]
-transform = Transform3D(1, 0, 0, 0, 0.968213, 0.250127, 0, -0.250127, 0.968213, -0.0455033, 1.99204, -3.60056)
+transform = Transform3D(1, 0, 0, 0, 0.968213, 0.250127, 0, -0.250127, 0.968213, 0.227369, 2.75023, -3.60056)
+enabled = false
 scene = ExtResource("4_ivgk7")
+viewport_size = Vector2(300, 215)
 transparent = 0
 
 [node name="Walls" type="StaticBody3D" parent="."]
