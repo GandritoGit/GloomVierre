@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=3 uid="uid://c2gvih77ehuu4"]
+
+[ext_resource type="Script" path="res://Scenes/two planets.gd" id="1_1lgdu"]
+[ext_resource type="Texture2D" uid="uid://ceg73qcq6keb7" path="res://sky/DarkNight.png" id="1_dv4hc"]
+[ext_resource type="Script" path="res://Scenes/Sun.gd" id="2_kvrbt"]
+[ext_resource type="Texture2D" uid="uid://ce52v6jpu7t0b" path="res://Scenes/Moon.jpeg" id="2_w0oht"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/misc/move_to.gd" id="4_qnmgi"]
+[ext_resource type="Texture2D" uid="uid://bj5ojyw1aqcnn" path="res://Scenes/Sun.png" id="6_15g7u"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g6nib"]
+panorama = ExtResource("1_dv4hc")
+
+[sub_resource type="Sky" id="Sky_j3iyv"]
+sky_material = SubResource("PanoramaSkyMaterial_g6nib")
+
+[sub_resource type="Environment" id="Environment_ojvfd"]
+background_mode = 2
+background_color = Color(0.643137, 0.313726, 0.552941, 1)
+background_energy_multiplier = 0.62
+sky = SubResource("Sky_j3iyv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gh07r"]
+albedo_texture = ExtResource("2_w0oht")
+backlight_enabled = true
+backlight = Color(0.121569, 0.113725, 0.113725, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0e815"]
+panorama = ExtResource("6_15g7u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_laymo"]
+next_pass = SubResource("PanoramaSkyMaterial_0e815")
+albedo_texture = ExtResource("6_15g7u")
+refraction_enabled = true
+refraction_scale = -0.17
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20.5302, 0)
+script = ExtResource("1_1lgdu")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ojvfd")
+
+[node name="planets" type="Node" parent="."]
+
+[node name="Sun" type="CSGSphere3D" parent="planets"]
+transform = Transform3D(-0.870802, 0, -0.491633, 0, 1, 0, 0.491633, 0, -0.870802, 71.5377, 441.42, -29.3418)
+radius = 53.315
+material = SubResource("StandardMaterial3D_gh07r")
+script = ExtResource("2_kvrbt")
+
+[node name="XRToolsMoveTo" type="Node" parent="planets/Sun"]
+script = ExtResource("4_qnmgi")
+
+[node name="Moon" type="CSGSphere3D" parent="planets"]
+transform = Transform3D(0.994701, 0.102634, 0.00602272, -0.102784, 0.991389, 0.0811413, 0.002357, -0.0813303, 0.996684, -73.417, 449.639, -39.5644)
+radius = 100.0
+material = SubResource("StandardMaterial3D_laymo")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="planets"]
+transform = Transform3D(0.765988, 0.642854, 0, -0.642854, 0.765988, 0, 0, 0, 1, -174.933, 496.072, -73.1656)
+spot_angle = 0.01
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.603069, 0, -0.797689, 0, 1, 0, 0.797689, 0, 0.603069, -231.738, 262.097, 268.108)
+fov = 92.8125
