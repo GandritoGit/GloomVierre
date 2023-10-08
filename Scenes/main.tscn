@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxi7syafn5mud"]
+[gd_scene load_steps=11 format=3 uid="uid://cxi7syafn5mud"]
 
 [ext_resource type="PackedScene" uid="uid://d38owdopel7p6" path="res://Scenes/player.tscn" id="1_4t3lw"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_hhu6f"]
@@ -12,7 +12,10 @@
 size = Vector2(10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b0grl"]
-size = Vector3(10, 0.5, 10)
+size = Vector3(80, 0.5, 80)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b6fos"]
+size = Vector3(0.001, 17.0179, 64.7839)
 
 [node name="Main Menu" type="Node3D"]
 script = ExtResource("1_hhu6f")
@@ -44,4 +47,23 @@ scene = ExtResource("6_8o48h")
 transparent = 0
 
 [node name="inside_galaxy_skybox_hdri_360_panorama" parent="." instance=ExtResource("7_hg1pd")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+
+[node name="Walls" type="StaticBody3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5307, 3.94785, -0.763451)
+shape = SubResource("BoxShape3D_b6fos")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(0.999956, -0.00113945, -0.00930237, 0.00113866, 0.999999, -8.99526e-05, 0.00930247, 7.93545e-05, 0.999957, 14.1764, 3.47192, -2.75206)
+shape = SubResource("BoxShape3D_b6fos")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(-0.0351262, 0.000129892, 0.999383, 0.00113866, 0.999999, -8.99526e-05, -0.999382, 0.0011348, -0.0351264, -1.9516, 2.81826, -33.4266)
+shape = SubResource("BoxShape3D_b6fos")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(-0.0351262, 0.000129892, 0.999383, 0.00113866, 0.999999, -8.99526e-05, -0.999382, 0.0011348, -0.0351264, -1.9516, 0.938594, 32.6682)
+shape = SubResource("BoxShape3D_b6fos")
