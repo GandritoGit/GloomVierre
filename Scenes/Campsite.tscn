@@ -28,7 +28,7 @@ size = Vector3(1, 2, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89107, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0214834, 0.999769, 0, -0.999769, -0.0214834, 0, 5.53033, 0)
+transform = Transform3D(1, 0, 0, 0, -0.0214834, 0.999769, 0, -0.999769, -0.0214834, 0, 40.1406, 0)
 
 [node name="HTerrain" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -25)
