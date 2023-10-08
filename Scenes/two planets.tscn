@@ -45,7 +45,7 @@ environment = SubResource("Environment_ojvfd")
 [node name="planets" type="Node" parent="."]
 
 [node name="Sun" type="CSGSphere3D" parent="planets"]
-transform = Transform3D(-0.943933, 0, -0.330135, 0, 1, 0, 0.330135, 0, -0.943933, -47.139, 28.4692, -41.2526)
+transform = Transform3D(-0.943933, 0, -0.330135, 0, 1, 0, 0.330135, 0, -0.943933, 48.9872, 20.6911, -41.2526)
 radius = 8.16944
 material = SubResource("StandardMaterial3D_gh07r")
 script = ExtResource("2_kvrbt")
@@ -54,7 +54,7 @@ script = ExtResource("2_kvrbt")
 script = ExtResource("4_qnmgi")
 
 [node name="Moon" type="CSGSphere3D" parent="planets"]
-transform = Transform3D(0.994701, 0.102634, 0.00602272, 0.00810638, -0.0198969, -0.999769, -0.10249, 0.99452, -0.0206234, 13.9435, 12.3991, -36.6002)
+transform = Transform3D(0.994701, 0.102634, 0.00602272, 0.00810638, -0.0198969, -0.999769, -0.10249, 0.99452, -0.0206234, 43.1417, 25.3889, 7.53337)
 radius = 15.0
 material = SubResource("StandardMaterial3D_laymo")
 

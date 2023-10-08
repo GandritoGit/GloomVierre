@@ -76,4 +76,4 @@ transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, -30, 7
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.326714, 20.7937, 0)
 
 [node name="Node3D2" parent="." instance=ExtResource("13_7tfmv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.45121, 37.2702, 45.8469)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52651, 36.1022, 49.1973)
