@@ -40,7 +40,7 @@ script = SubResource("GDScript_pmrmj")
 [node name="StartXR" parent="." instance=ExtResource("3_7enum")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0690427, 0.997614, 0, -0.997614, 0.0690427, 0, 8.018, 0)
+transform = Transform3D(0.993013, 0.00606516, -0.117853, -0.054941, 0.907605, -0.416215, 0.10444, 0.419782, 0.901596, 0.58042, 1.94138, 1.47288)
 
 [node name="inside_galaxy_skybox_hdri_360_panorama" parent="." instance=ExtResource("7_hg1pd")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
@@ -49,10 +49,10 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." instance=ExtResource("1_4t3lw")]
 
 [node name="Menu" parent="." instance=ExtResource("3_7go3w")]
-transform = Transform3D(1, 0, 0, 0, 0.968213, 0.250127, 0, -0.250127, 0.968213, 0.227369, 2.75023, -3.60056)
-enabled = false
+transform = Transform3D(1.5, 0, 0, 0, 1.47244, -0.286213, 0, 0.286213, 1.47244, 0, 4, -4)
+rotation_edit_mode = 1
 scene = ExtResource("4_ivgk7")
-viewport_size = Vector2(300, 215)
+viewport_size = Vector2(300, 140)
 transparent = 0
 
 [node name="Walls" type="StaticBody3D" parent="."]

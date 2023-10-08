@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://o2fec0tr1mr5"]
+[gd_scene load_steps=3 format=3 uid="uid://cq28n32nu8ph"]
 
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_8xkiq"]
 [ext_resource type="PackedScene" uid="uid://cx4t8lv8li2ft" path="res://Scenes/lunar_eclipses_image.tscn" id="2_u4wyw"]
 
 [node name="LunarEclipseDisplay3d" type="Node3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("1_8xkiq")]
-transform = Transform3D(0.999802, 0.0199129, 0, -0.0199129, 0.999802, 0, 0, 0, 1, -0.67732, 1.88579, 1.70255)
+transform = Transform3D(4.99901, 0.0995645, 0, -0.0995645, 4.99901, 0, 0, 0, 5, 0, 0, 0)
 scene = ExtResource("2_u4wyw")
-viewport_size = Vector2(9000, 6000)

@@ -12,13 +12,14 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="." node_paths=PackedStringArray("shortcut_context")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1153.0
+offset_bottom = 646.0
 shortcut_context = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_right = 8455.0
-offset_bottom = 5740.0
+offset_right = 1152.0
+offset_bottom = 645.0
+scale = Vector2(0.998405, 1.00718)
 texture = ExtResource("1_1y1uq")
 expand_mode = 3
