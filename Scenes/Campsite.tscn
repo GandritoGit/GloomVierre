@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgb5kjil5omil"]
+[gd_scene load_steps=16 format=3 uid="uid://dgb5kjil5omil"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_kyt4o"]
 [ext_resource type="PackedScene" uid="uid://d38owdopel7p6" path="res://Scenes/player.tscn" id="2_qd1tu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cdlnsu88ugx4b" path="res://data/GloomVierre_terrain/Campsite_Ground/Campsite_slot1_albedo_bump.png" id="7_u2coa"]
 [ext_resource type="Texture2D" uid="uid://b84bo08nce5j8" path="res://data/GloomVierre_terrain/Campsite_Ground/Campsite_slot0_normal_roughness.png" id="8_yvpj6"]
 [ext_resource type="Texture2D" uid="uid://cr2wl1gf2b8n3" path="res://data/GloomVierre_terrain/Campsite_Ground/Campsite_slot1_normal_roughness.png" id="9_raegm"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="10_vrqbt"]
 
 [sub_resource type="Resource" id="Resource_lb6ie"]
 script = ExtResource("5_prx5n")
@@ -17,6 +18,17 @@ textures = [[ExtResource("6_2331j"), ExtResource("7_u2coa")], [ExtResource("8_yv
 
 [sub_resource type="BoxMesh" id="BoxMesh_im1e3"]
 size = Vector3(1, 2, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8bld1"]
+
+[sub_resource type="Sky" id="Sky_e0aoy"]
+sky_material = SubResource("PanoramaSkyMaterial_8bld1")
+
+[sub_resource type="Environment" id="Environment_qcjxp"]
+background_mode = 1
+background_color = Color(0.235294, 0.603922, 0.701961, 1)
+sky = SubResource("Sky_e0aoy")
+ambient_light_color = Color(0.25098, 0.615686, 0.764706, 1)
 
 [node name="Campsite" type="Node3D"]
 
@@ -50,4 +62,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.743, 3.34971, -0.223722)
 mesh = SubResource("BoxMesh_im1e3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0493553, 0.998781, 0, -0.998781, 0.0493553, 0, 12.0515, 0)
+transform = Transform3D(1, 0, 0, 0, 0.0493553, 0.998781, 0, -0.998781, 0.0493553, -10.0139, 11.95, -0.085144)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qcjxp")
+
+[node name="HTerrainDetailLayer" type="Node3D" parent="."]
+script = ExtResource("10_vrqbt")
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = null
+shader_params/u_roughness = null
