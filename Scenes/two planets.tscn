@@ -24,11 +24,11 @@ albedo_texture = ExtResource("2_w0oht")
 backlight_enabled = true
 backlight = Color(0.121569, 0.113725, 0.113725, 1)
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0e815"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_towxc"]
 panorama = ExtResource("6_15g7u")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_laymo"]
-next_pass = SubResource("PanoramaSkyMaterial_0e815")
+next_pass = SubResource("PanoramaSkyMaterial_towxc")
 albedo_texture = ExtResource("6_15g7u")
 backlight_enabled = true
 backlight = Color(0.427451, 0.427451, 0.427451, 1)
@@ -45,8 +45,8 @@ environment = SubResource("Environment_ojvfd")
 [node name="planets" type="Node" parent="."]
 
 [node name="Sun" type="CSGSphere3D" parent="planets"]
-transform = Transform3D(-0.943933, 0, -0.330135, 0, 1, 0, 0.330135, 0, -0.943933, 47.8867, 488.593, 254.613)
-radius = 53.315
+transform = Transform3D(-0.943933, 0, -0.330135, 0, 1, 0, 0.330135, 0, -0.943933, -47.139, 28.4692, -41.2526)
+radius = 8.16944
 material = SubResource("StandardMaterial3D_gh07r")
 script = ExtResource("2_kvrbt")
 
@@ -54,8 +54,8 @@ script = ExtResource("2_kvrbt")
 script = ExtResource("4_qnmgi")
 
 [node name="Moon" type="CSGSphere3D" parent="planets"]
-transform = Transform3D(0.994701, 0.102634, 0.00602272, 0.00810638, -0.0198969, -0.999769, -0.10249, 0.99452, -0.0206234, -89.1771, 384.404, -172.339)
-radius = 100.0
+transform = Transform3D(0.994701, 0.102634, 0.00602272, 0.00810638, -0.0198969, -0.999769, -0.10249, 0.99452, -0.0206234, 13.9435, 12.3991, -36.6002)
+radius = 15.0
 material = SubResource("StandardMaterial3D_laymo")
 
 [node name="Camera3D" type="Camera3D" parent="."]
