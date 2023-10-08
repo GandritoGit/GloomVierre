@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dgb5kjil5omil"]
+[gd_scene load_steps=17 format=3 uid="uid://dgb5kjil5omil"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_kyt4o"]
 [ext_resource type="PackedScene" uid="uid://d38owdopel7p6" path="res://Scenes/player.tscn" id="2_qd1tu"]
@@ -17,9 +17,6 @@
 script = ExtResource("5_prx5n")
 mode = 0
 textures = [[ExtResource("6_2331j"), ExtResource("7_u2coa")], [ExtResource("8_yvpj6"), ExtResource("9_raegm")]]
-
-[sub_resource type="BoxMesh" id="BoxMesh_im1e3"]
-size = Vector3(1, 2, 1)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8bld1"]
 
@@ -58,10 +55,6 @@ shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = Vector4(1, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.743, 3.34971, -0.223722)
-mesh = SubResource("BoxMesh_im1e3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0493553, 0.998781, 0, -0.998781, 0.0493553, -10.0139, 11.95, -0.085144)
