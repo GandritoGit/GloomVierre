@@ -6,6 +6,6 @@
 [node name="LunarEclipseDisplay3d" type="Node3D"]
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("1_8xkiq")]
-transform = Transform3D(0.999802, 0.0199129, 0, -0.0199129, 0.999802, 0, 0, 0, 1, -1.67732, 1.88579, 1.70255)
+transform = Transform3D(0.999802, 0.0199129, 0, -0.0199129, 0.999802, 0, 0, 0, 1, -0.67732, 1.88579, 1.70255)
 scene = ExtResource("2_u4wyw")
-viewport_size = Vector2(2500, 2000)
+viewport_size = Vector2(9000, 6000)
