@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cxi7syafn5mud"]
+[gd_scene load_steps=13 format=3 uid="uid://cxi7syafn5mud"]
 
 [ext_resource type="PackedScene" uid="uid://d38owdopel7p6" path="res://Scenes/player.tscn" id="1_4t3lw"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_hhu6f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_7go3w"]
 [ext_resource type="PackedScene" uid="uid://ivo4lihvxxik" path="res://Scenes/MenuTest.tscn" id="4_ivgk7"]
 [ext_resource type="PackedScene" uid="uid://dbueonhnqch5c" path="res://Scenes/PauseMenu.tscn" id="6_8o48h"]
+[ext_resource type="Texture2D" uid="uid://dg3oivbwveshk" path="res://sky/EveningSkyHDRI018B_2K-HDR.exr" id="7_jkue0"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b0g6d"]
 size = Vector2(10, 10)
@@ -13,15 +14,15 @@ size = Vector2(10, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_b0grl"]
 size = Vector3(10, 0.5, 10)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dnkoo"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_njkac"]
+panorama = ExtResource("7_jkue0")
 
-[sub_resource type="Sky" id="Sky_vtn5n"]
-sky_material = SubResource("ProceduralSkyMaterial_dnkoo")
+[sub_resource type="Sky" id="Sky_s4yk8"]
+sky_material = SubResource("PanoramaSkyMaterial_njkac")
 
-[sub_resource type="Environment" id="Environment_3gibc"]
+[sub_resource type="Environment" id="Environment_c736r"]
 background_mode = 2
-background_color = Color(0.517647, 0.0117647, 0.423529, 0.0784314)
-sky = SubResource("Sky_vtn5n")
+sky = SubResource("Sky_s4yk8")
 
 [node name="Main Menu" type="Node3D"]
 script = ExtResource("1_hhu6f")
@@ -40,9 +41,6 @@ shape = SubResource("BoxShape3D_b0grl")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.634137, 0.773221, 0, -0.773221, -0.634137, 0, 10.1205, -6.56415)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_3gibc")
-
 [node name="StartXR" parent="." instance=ExtResource("3_7enum")]
 
 [node name="Menu" parent="." instance=ExtResource("3_7go3w")]
@@ -54,3 +52,6 @@ transparent = 0
 transform = Transform3D(0.0128802, 0, -0.999917, 0, 1, 0, 0.999917, 0, 0.0128802, 5.3074, 1.67745, 0.510546)
 scene = ExtResource("6_8o48h")
 transparent = 0
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c736r")
