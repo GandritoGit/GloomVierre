@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://beyt8ajlc8bee"]
+
+[ext_resource type="Texture2D" uid="uid://cvphwbco8qjjj" path="res://sky/Solar_lunar_eclipse_diagram.png" id="1_u6c01"]
+
+[node name="EclipseExplanationImage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." node_paths=PackedStringArray("shortcut_context")]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+shortcut_context = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.6
+anchor_bottom = 14.275
+offset_right = -1104.0
+offset_bottom = -531.0
+texture = ExtResource("1_u6c01")

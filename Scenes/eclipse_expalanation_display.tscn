@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://lse5awqcqqd3"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_4xv6e"]
+[ext_resource type="PackedScene" uid="uid://beyt8ajlc8bee" path="res://Scenes/eclipse_explanation_image.tscn" id="2_sxw0r"]
+
+[node name="EclipseExpalanationDisplay" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.264514, 1.14535, -0.857496)
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("1_4xv6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035776, 0, 0.30259)
+scene = ExtResource("2_sxw0r")
+viewport_size = Vector2(1500, 600)
