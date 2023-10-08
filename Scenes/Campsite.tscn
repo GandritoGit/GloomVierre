@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dgb5kjil5omil"]
+[gd_scene load_steps=12 format=3 uid="uid://dgb5kjil5omil"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_kyt4o"]
 [ext_resource type="PackedScene" uid="uid://d38owdopel7p6" path="res://Scenes/player.tscn" id="2_qd1tu"]
@@ -18,18 +18,12 @@ textures = [[ExtResource("6_2331j"), ExtResource("7_u2coa")], [ExtResource("8_yv
 [sub_resource type="BoxMesh" id="BoxMesh_im1e3"]
 size = Vector3(1, 2, 1)
 
-[sub_resource type="Environment" id="Environment_o1qvh"]
-background_mode = 2
-
 [node name="Campsite" type="Node3D"]
 
 [node name="StartXR" parent="." instance=ExtResource("1_kyt4o")]
 
 [node name="Player" parent="." instance=ExtResource("2_qd1tu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.89107, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0214834, 0.999769, 0, -0.999769, -0.0214834, 0, 40.1406, 0)
 
 [node name="HTerrain" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -25)
@@ -52,8 +46,5 @@ shader_params/u_triplanar = null
 shader_params/u_tile_reduction = Vector4(1, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70359, 2.75344, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.743, 3.34971, -0.223722)
 mesh = SubResource("BoxMesh_im1e3")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_o1qvh")
