@@ -48,3 +48,6 @@ shader_params/u_tile_reduction = Vector4(1, 0, 0, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.743, 3.34971, -0.223722)
 mesh = SubResource("BoxMesh_im1e3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0493553, 0.998781, 0, -0.998781, 0.0493553, 0, 12.0515, 0)
