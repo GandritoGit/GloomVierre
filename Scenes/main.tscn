@@ -1,12 +1,32 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxi7syafn5mud"]
+[gd_scene load_steps=10 format=3 uid="uid://cxi7syafn5mud"]
 
 [ext_resource type="PackedScene" uid="uid://d38owdopel7p6" path="res://Scenes/player.tscn" id="1_4t3lw"]
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_hhu6f"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="3_7enum"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_7go3w"]
 [ext_resource type="PackedScene" uid="uid://ivo4lihvxxik" path="res://Scenes/MenuTest.tscn" id="4_ivgk7"]
-[ext_resource type="PackedScene" uid="uid://dbueonhnqch5c" path="res://Scenes/PauseMenu.tscn" id="6_8o48h"]
 [ext_resource type="PackedScene" uid="uid://y3m6wpon71l0" path="res://sky/inside_galaxy_skybox_hdri_360_panorama.glb" id="7_hg1pd"]
+
+[sub_resource type="GDScript" id="GDScript_pmrmj"]
+script/source = "extends Node3D
+
+@onready var pause_menu = $PauseMenu
+var paused = true
+
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"Pause\"):
+		pauseMenu()
+		print(\"it worked\")
+
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+	else:
+		pause_menu.show()
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b6fos"]
+size = Vector3(0.001, 17.0179, 64.7839)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b0g6d"]
 size = Vector2(10, 10)
@@ -14,42 +34,26 @@ size = Vector2(10, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_b0grl"]
 size = Vector3(80, 0.5, 80)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_b6fos"]
-size = Vector3(0.001, 17.0179, 64.7839)
-
 [node name="Main Menu" type="Node3D"]
-script = ExtResource("1_hhu6f")
+script = SubResource("GDScript_pmrmj")
 
-[node name="Player" parent="." instance=ExtResource("1_4t3lw")]
-
-[node name="Ground" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-visible = false
-mesh = SubResource("PlaneMesh_b0g6d")
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.244093, 0)
-shape = SubResource("BoxShape3D_b0grl")
+[node name="StartXR" parent="." instance=ExtResource("3_7enum")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0690427, 0.997614, 0, -0.997614, 0.0690427, 0, 8.018, 0)
 
-[node name="StartXR" parent="." instance=ExtResource("3_7enum")]
-
-[node name="Menu" parent="." instance=ExtResource("3_7go3w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0415277, 1.77135, -2.76139)
-scene = ExtResource("4_ivgk7")
-transparent = 0
-
-[node name="PauseMenu" parent="." instance=ExtResource("3_7go3w")]
-transform = Transform3D(0.0128802, 0, -0.999917, 0, 1, 0, 0.999917, 0, 0.0128802, 5.3074, 1.67745, 0.510546)
-scene = ExtResource("6_8o48h")
-transparent = 0
-
 [node name="inside_galaxy_skybox_hdri_360_panorama" parent="." instance=ExtResource("7_hg1pd")]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_4t3lw")]
+
+[node name="Menu" parent="." instance=ExtResource("3_7go3w")]
+transform = Transform3D(1, 0, 0, 0, 0.968213, 0.250127, 0, -0.250127, 0.968213, 0.227369, 2.75023, -3.60056)
+enabled = false
+scene = ExtResource("4_ivgk7")
+viewport_size = Vector2(300, 215)
+transparent = 0
 
 [node name="Walls" type="StaticBody3D" parent="."]
 metadata/_edit_lock_ = true
@@ -69,3 +73,14 @@ shape = SubResource("BoxShape3D_b6fos")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls"]
 transform = Transform3D(-0.0351262, 0.000129892, 0.999383, 0.00113866, 0.999999, -8.99526e-05, -0.999382, 0.0011348, -0.0351264, -1.9516, 0.938594, 32.6682)
 shape = SubResource("BoxShape3D_b6fos")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+visible = false
+mesh = SubResource("PlaneMesh_b0g6d")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.244093, 0)
+shape = SubResource("BoxShape3D_b0grl")
