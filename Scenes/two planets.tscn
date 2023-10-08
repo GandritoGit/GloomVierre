@@ -30,6 +30,8 @@ panorama = ExtResource("6_15g7u")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_laymo"]
 next_pass = SubResource("PanoramaSkyMaterial_0e815")
 albedo_texture = ExtResource("6_15g7u")
+backlight_enabled = true
+backlight = Color(0.427451, 0.427451, 0.427451, 1)
 refraction_enabled = true
 refraction_scale = -0.17
 
@@ -43,7 +45,7 @@ environment = SubResource("Environment_ojvfd")
 [node name="planets" type="Node" parent="."]
 
 [node name="Sun" type="CSGSphere3D" parent="planets"]
-transform = Transform3D(-0.870802, 0, -0.491633, 0, 1, 0, 0.491633, 0, -0.870802, 71.5377, 441.42, -29.3418)
+transform = Transform3D(-0.943933, 0, -0.330135, 0, 1, 0, 0.330135, 0, -0.943933, 47.8867, 488.593, 254.613)
 radius = 53.315
 material = SubResource("StandardMaterial3D_gh07r")
 script = ExtResource("2_kvrbt")
@@ -52,14 +54,10 @@ script = ExtResource("2_kvrbt")
 script = ExtResource("4_qnmgi")
 
 [node name="Moon" type="CSGSphere3D" parent="planets"]
-transform = Transform3D(0.994701, 0.102634, 0.00602272, -0.102784, 0.991389, 0.0811413, 0.002357, -0.0813303, 0.996684, -73.417, 449.639, -39.5644)
+transform = Transform3D(0.994701, 0.102634, 0.00602272, 0.00810638, -0.0198969, -0.999769, -0.10249, 0.99452, -0.0206234, -89.1771, 384.404, -172.339)
 radius = 100.0
 material = SubResource("StandardMaterial3D_laymo")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="planets"]
-transform = Transform3D(0.765988, 0.642854, 0, -0.642854, 0.765988, 0, 0, 0, 1, -174.933, 496.072, -73.1656)
-spot_angle = 0.01
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.603069, 0, -0.797689, 0, 1, 0, 0.797689, 0, 0.603069, -231.738, 262.097, 268.108)
-fov = 92.8125
+transform = Transform3D(-0.244607, -0.0104197, 0.969566, 0.969388, -0.0246213, 0.244297, 0.0213265, 0.999643, 0.0161232, 224.636, 448.512, -33.0483)
+fov = 177.188
