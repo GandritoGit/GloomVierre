@@ -18,6 +18,7 @@ shortcut_context = NodePath("TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 8455.0
+offset_bottom = 5740.0
 texture = ExtResource("1_1y1uq")
+expand_mode = 3
