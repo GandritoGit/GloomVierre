@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://beyt8ajlc8bee" path="res://Scenes/eclipse_explanation_image.tscn" id="2_sxw0r"]
 
 [node name="EclipseExpalanationDisplay" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.264514, 1.14535, -0.857496)
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("1_4xv6e")]
-enabled = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035776, 0, 0.30259)
 scene = ExtResource("2_sxw0r")
 viewport_size = Vector2(1500, 600)
